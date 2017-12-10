@@ -27,7 +27,7 @@ import rosegraphics as rg
 # ----------------------------------------------------------------------
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_draw_parallel_lines()
+    #run_test_draw_parallel_lines()
     run_test_draw_lines()
 
 
@@ -71,14 +71,17 @@ def run_test_draw_parallel_lines():
 def draw_parallel_lines(n, point, length, window):
     x = point.x
     y = point.y
+
     for _ in range(n):
         start_point = rg.Point(x, y)
         end_point = rg.Point(x + length, y)
-        line = rg.Line(start_point, end_point)
-        line.attach_to(window )
+        parallel_line = rg.Line(start_point, end_point)
         y = y + 30
-
+        parallel_line.attach_to(window)
     window.render()
+
+
+
 
     """
     What comes in: The four arguments are:
@@ -106,6 +109,17 @@ def draw_parallel_lines(n, point, length, window):
       :type length: int
       :type window: rg.RoseWindow
     """
+
+    #x = point.x
+    #y = point.y
+    #for _ in range(n):
+        #start_point = rg.Point(x, y)
+        #end_point = rg.Point(x + length, y)
+        #line = rg.Line(start_point, end_point)
+        #line.attach_to(window )
+        #y = y + 30
+
+    #window.render()
     # ------------------------------------------------------------------
     # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
@@ -148,12 +162,11 @@ def draw_lines(n, point, window):
     x = point.x
     y = point.y
     start_point = rg.Point(x, y)
-    for _ in range(n):
-        end_point = rg.Point(x + 100, y - 100)
-        line = rg.Line(start_point, end_point)
-        y = y + (200 / n + 1)
-        line.attach_to(window)
-
+    for _ in range (n):
+        end_point = rg.Point(x+100, y-100)
+        lines = rg.Line(start_point, end_point)
+        y = y + (200/(n-1))
+        lines.attach_to(window)
     window.render()
 
 
@@ -183,6 +196,8 @@ def draw_lines(n, point, window):
       :type point: rg.Point
       :type window: rg.RoseWindow
     """
+
+
     # ------------------------------------------------------------------
     # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).

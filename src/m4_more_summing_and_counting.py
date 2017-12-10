@@ -31,9 +31,9 @@ import math
 # ----------------------------------------------------------------------
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_sum_from()
-    run_test_factorial()
-    run_test_count_cosines_from()
+    #run_test_sum_from()
+    #run_test_factorial()
+    #run_test_count_cosines_from()
     run_test_sum_unit_fractions_from()
 
 
@@ -105,10 +105,11 @@ def run_test_sum_from():
 
 def sum_from(m, n):
     total = 0
-    for k in range(n - m + 1):
-        total = total + (m + k)
+    for k in range(n-m+1):
+        total = total + (m+k)
 
     return total
+
 
 
     """
@@ -119,6 +120,13 @@ def sum_from(m, n):
     Example:
         sum_from(6, 9) returns 6 + 7 + 8 + 9, that is, 30.
     """
+
+    #total = 0
+    #for k in range(n - m + 1):
+        #total = total + (m + k)
+
+    #return total
+
     # ------------------------------------------------------------------
     # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
@@ -177,6 +185,12 @@ def run_test_factorial():
 
 
 def factorial(n):
+    total = 1
+    for k in range(n):
+        total = total * (n-k)
+
+    return total
+
     """
     What comes in:  The sole argument is a non-negative integer n.
     What goes out:  Returns n!, that is, n x (n-1) x (n-2) x ... x 1.
@@ -185,11 +199,11 @@ def factorial(n):
         factorial(5) returns 5 x 4 x 3 x 2 x 1, that is, 120.
         factorial(0) returns 1 (by definition).
     """
-    total = 1
-    for k in range(n):
-        total = total * (k + 1)
+    #total = 1
+    #for k in range(n):
+        #total = total * (k + 1)
 
-    return total
+    #return total
     # ------------------------------------------------------------------
     # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
@@ -261,8 +275,8 @@ def run_test_count_cosines_from():
 
 def count_cosines_from(m, n, x):
     count = 0
-    for k in range(n - m + 1):
-        if math.cos(k + m) > x:
+    for k in range(n-m+1):
+        if math.cos(m+k) > x:
             count = count + 1
 
     return count
@@ -286,6 +300,13 @@ def count_cosines_from(m, n, x):
       -- count_cosines_from(3, 9, 0.27)  returns  3
       -- count_cosines_from(4, 8, -0.5)  returns  4
     """
+
+    #count = 0
+    #for k in range(n - m + 1):
+        #if math.cos(k + m) > x:
+            #count = count + 1
+
+    #return count
     # ------------------------------------------------------------------
     # DONE: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
@@ -322,7 +343,7 @@ def run_test_sum_unit_fractions_from():
     print('       actual:', answer)
 
     # Test 3:
-    expected = 223
+    expected = 0.583
     answer = sum_unit_fractions_from(3, 4)
     print('Test 3 expected:', expected)
     print('       actual:', answer)
@@ -334,8 +355,8 @@ def run_test_sum_unit_fractions_from():
 
 def sum_unit_fractions_from(m, n):
     total = 0
-    for k in range(n - m + 1):
-        total = total + 1 / (m + k)
+    for k in range(n-m+1):
+        total = total + (1/(m+k))
 
     return total
 
@@ -351,6 +372,11 @@ def sum_unit_fractions_from(m, n):
          which is about 0.545635
       -- sum_unit_fractions_from(10, 9000)  returns about  6.853
     """
+    #total = 0
+    #for k in range(n - m + 1):
+        #total = total + 1 / (m + k)
+
+    #return total
     # ------------------------------------------------------------------
     # DONE: 9. Implement and test this function.
     #   Note that you should write its TEST function first (above).
