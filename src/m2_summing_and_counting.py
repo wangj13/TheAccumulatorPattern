@@ -24,8 +24,8 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 import math
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_sum_more_cosines()
-    run_test_count_sines_from()
+    #run_test_sum_more_cosines()
+    #run_test_count_sines_from()
     run_test_count_sines_vs_cosines()
 
 
@@ -83,10 +83,16 @@ def run_test_sum_more_cosines():
 
 def sum_more_cosines(m, n):
     total = 0
-    for k in range(n - m + 1):
-        total = total + math.cos(m + k)
+    for k in range(n-m+1):
+        total = total + math.cos(k+m)
 
     return total
+
+    #total = 0
+    #for k in range(n - m + 1):
+        #total = total + math.cos(m + k)
+
+    #return total
 
     """
     What comes in:  The two arguments are integers m and n, with m <= n.
@@ -155,14 +161,14 @@ def run_test_count_sines_from():
     print('       actual:', answer)
 
     # Test 5:
-    expected = 2
-    answer = count_sines_from(4, 5)
+    expected = 5
+    answer = count_sines_from(3, 9)
     print('Test 5 expected:', expected)
     print('       actual:', answer)
 
     # Test 6
-    expected = 2
-    answer = count_sines_from(5, 6)
+    expected = 3
+    answer = count_sines_from(4, 6)
     print('Test 6 expected:', expected)
     print('       actual:', answer)
 
@@ -175,10 +181,12 @@ def run_test_count_sines_from():
 def count_sines_from(m, n):
     count = 0
     for k in range(n-m+1):
-        if math.sin(m + k) < 0.5:
+        if math.sin(m+k) < 0.5:
             count = count + 1
 
     return count
+
+
 
     """
     What comes in:  The two arguments are integers m and n, with m <= n.
@@ -198,6 +206,13 @@ def count_sines_from(m, n):
       -- count_sines_from(7, 7)  returns  0
       -- count_sines_from(9, 9)  returns  1
     """
+
+    #count = 0
+    #for k in range(n-m+1):
+        #if math.sin(m + k) < 0.5:
+            #count = count + 1
+
+    #return count
     # ------------------------------------------------------------------
     # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
@@ -254,7 +269,7 @@ def run_test_count_sines_vs_cosines():
     print('       actual:', answer)
 
     # Test 6:
-    expected = 123
+    expected = 5
     answer = count_sines_vs_cosines(4)
     print('Test 6 expected:', expected)
     print('       actual:', answer)
@@ -267,10 +282,11 @@ def run_test_count_sines_vs_cosines():
 def count_sines_vs_cosines(m):
     count = 0
     for k in range(2*m+1):
-        if math.sin(k - m) > math.cos(k - m):
+        if math.sin(k-m) > math.cos(k-m):
             count = count + 1
 
     return count
+
 
     """
     What comes in:  The sole argument is a non-negative integer m.
@@ -295,6 +311,13 @@ def count_sines_vs_cosines(m):
       -- count_sines_vs_cosines(1) returns 1
       -- Also:  count_sines_vs_cosines(101) returns 100 (trust me!)
     """
+
+    #count = 0
+    #for k in range(2*m+1):
+        #if math.sin(k - m) > math.cos(k - m):
+            #count = count + 1
+
+    #return count
     # ------------------------------------------------------------------
     # DONE: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).

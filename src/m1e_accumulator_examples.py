@@ -23,8 +23,8 @@ import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_summing_example()
-    run_test_counting_example()
+    #run_test_summing_example()
+    #run_test_counting_example()
     run_test_draw_row_of_circles()
 
 
@@ -55,6 +55,13 @@ def run_test_summing_example():
 
 
 def summing_example(n):
+    total = 0
+    for k in range(n):
+        total = total + (k+1)**3
+
+    return total
+
+
     """
     What comes in:  The sole argument is a non-negative integer n.
     What goes out:  Returns the sum
@@ -65,11 +72,11 @@ def summing_example(n):
            this function returns (1 + 8 + 27 + 64), which is 100.
       -- If the integer is 20, this function returns 44,100.
     """
-    total = 0  # Initialize to 0 BEFORE the loop
-    for k in range(n):  # Loop
-        total = total + ((k + 1) ** 3)  # Accumulate INSIDE the loop.
+    #total = 0  # Initialize to 0 BEFORE the loop
+    #for k in range(n):  # Loop
+        #total = total + ((k + 1) ** 3)  # Accumulate INSIDE the loop.
 
-    return total
+    #return total
 
 
 def run_test_counting_example():
@@ -99,6 +106,13 @@ def run_test_counting_example():
 
 
 def counting_example(n):
+    count = 0
+    for k in range(n):
+        if math.cos(k+1) > 0:
+            count = count + 1
+
+    return count
+
     """
     What comes in:  The sole argument is a non-negative integer n.
     What goes out:  Returns the number of integers from 1 to n,
@@ -116,12 +130,12 @@ def counting_example(n):
       -- counting_example(0) returns 0
              since the cosine(0) is not positive.
     """
-    count = 0  # Initialize to 0 BEFORE the loop
-    for k in range(n):  # Loop
-        if math.cos(k + 1) > 0:  # If the condition holds:
-            count = count + 1  # Increment INSIDE the loop.
+    #count = 0  # Initialize to 0 BEFORE the loop
+    #for k in range(n):  # Loop
+        #if math.cos(k + 1) > 0:  # If the condition holds:
+            #count = count + 1  # Increment INSIDE the loop.
 
-    return count
+    #return count
 
 
 def run_test_draw_row_of_circles():
